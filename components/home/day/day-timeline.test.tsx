@@ -14,4 +14,13 @@ describe("DayTimeline", () => {
     expect(times).toEqual([...times].sort());
     for (const t of ["09:00", "09:10", "10:30", "18:00"]) expect(times).toContain(t);
   });
+
+  it("says the 10:30 entry once, without repeating itself", () => {
+    render(<DayTimeline />);
+    const entry = within(screen.getByRole("list"))
+      .getAllByRole("listitem")
+      .find((li) => li.querySelector("time")?.textContent === "10:30");
+    expect(entry?.querySelector("p")?.textContent).toBe("The machine merges the first reviewed PRs.");
+    expect(entry?.textContent?.match(/merge/gi)).toHaveLength(1);
+  });
 });

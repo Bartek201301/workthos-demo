@@ -10,8 +10,13 @@ export type RobotState = "idle" | "working" | "sleeping";
 export type RobotProps = {
   role: RobotRole;
   state: RobotState;
-  /** Width and height in pixels. Passed to BotAvatar's `size`, never to CSS. */
-  size?: number;
+  /**
+   * Width and height: pixels as a number, or any CSS length as a string
+   * ("6rem", "clamp(72px, 9vw, 128px)", "var(--robot-size)"), so a robot can
+   * grow with the screen. Passed to BotAvatar's `size`, never to CSS: the
+   * avatar sizes its overscanned canvas and its negative margins from it.
+   */
+  size?: number | string;
 };
 
 // docs/design.md, the robots: one body type per role.
@@ -31,7 +36,9 @@ const avatarState: Record<RobotState, BotAvatarState> = {
 };
 
 // A slight hop on hover (docs/design.md, effects). The canvas overscans its
-// box by half its size, so the hop has room and nothing here clips it.
+// box by half its size (a quarter on each side), so the hop has room and
+// nothing here clips it. Where a robot sits at the edge of the content, leave
+// that quarter of its size free between it and the edge of the screen.
 const HOP: Keyframe[] = [
   { transform: "translateY(0)" },
   { transform: "translateY(-6%)", offset: 0.4 },

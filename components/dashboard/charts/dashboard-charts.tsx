@@ -53,7 +53,11 @@ const kindConfig = {
   log: { label: "Log PRs", color: "var(--chart-5)" },
 } satisfies ChartConfig;
 
-const chartClass = "aspect-auto h-64 w-full";
+// The bar, line and area charts keep Recharts' keyboard layer: Tab reaches
+// each chart (named by its title) and the arrow keys move its tooltip.
+// components/ui/chart.tsx hides the chart's outline; on keyboard focus this
+// puts back the global forest outline of app/globals.css.
+const chartClass = "aspect-auto h-64 w-full [&_.recharts-surface:focus-visible]:outline-solid";
 
 function MergedPerDayChart({ project }: DashboardChartsProps) {
   const data = mergedPerDay(project);
@@ -65,7 +69,7 @@ function MergedPerDayChart({ project }: DashboardChartsProps) {
   return (
     <ChartCard title="Pull requests merged per day" summary={summary}>
       <ChartContainer config={mergedConfig} className={chartClass}>
-        <BarChart data={data} accessibilityLayer>
+        <BarChart data={data} accessibilityLayer title="Pull requests merged per day">
           <CartesianGrid vertical={false} />
           <XAxis dataKey="date" tickFormatter={shortDate} tickLine={false} axisLine={false} minTickGap={16} />
           <YAxis allowDecimals={false} tickLine={false} axisLine={false} width={32} />
@@ -90,7 +94,7 @@ function MinutesToMergeChart({ project }: DashboardChartsProps) {
   return (
     <ChartCard title="Minutes from PR opened to merged" summary={summary}>
       <ChartContainer config={minutesConfig} className={chartClass}>
-        <LineChart data={data} accessibilityLayer margin={{ right: 12 }}>
+        <LineChart data={data} accessibilityLayer title="Minutes from PR opened to merged" margin={{ right: 12 }}>
           <CartesianGrid vertical={false} />
           <XAxis dataKey="order" tickLine={false} axisLine={false} minTickGap={24} />
           <YAxis
@@ -137,7 +141,7 @@ function LinesPerDayChart({ project }: DashboardChartsProps) {
   return (
     <ChartCard title="Lines added and deleted per day" summary={summary}>
       <ChartContainer config={linesConfig} className={chartClass}>
-        <AreaChart data={data} accessibilityLayer>
+        <AreaChart data={data} accessibilityLayer title="Lines added and deleted per day">
           <CartesianGrid vertical={false} />
           <XAxis dataKey="date" tickFormatter={shortDate} tickLine={false} axisLine={false} minTickGap={16} />
           <YAxis tickFormatter={format} tickLine={false} axisLine={false} width={48} />
@@ -161,9 +165,20 @@ function KindChart({ project }: DashboardChartsProps) {
   return (
     <ChartCard title="Task PRs vs log PRs" summary={summary}>
       <ChartContainer config={kindConfig} className={chartClass}>
-        <PieChart>
+        {/* Two values, both in the summary and the legend: a picture, not a Tab stop. */}
+        <PieChart accessibilityLayer={false}>
           <ChartTooltip content={<ChartTooltipContent className={tooltipClassName} hideLabel nameKey="kind" />} />
-          <Pie isAnimationActive={false} data={data} dataKey="count" nameKey="kind" innerRadius={60} outerRadius={90} strokeWidth={2} stroke="var(--sand-50)">
+          <Pie
+            isAnimationActive={false}
+            rootTabIndex={-1}
+            data={data}
+            dataKey="count"
+            nameKey="kind"
+            innerRadius={60}
+            outerRadius={90}
+            strokeWidth={2}
+            stroke="var(--sand-50)"
+          >
             {data.map((d) => (
               <Cell key={d.kind} fill={d.fill} />
             ))}

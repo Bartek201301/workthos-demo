@@ -3,7 +3,7 @@ import { Reveal } from "@/components/brand";
 const entries = [
   { time: "09:00", text: "You plan the wave with the lead." },
   { time: "09:10", text: "Four builders start, each in its own worktree." },
-  { time: "10:30", text: "First merges land. The machine merges them." },
+  { time: "10:30", text: "The machine merges the first reviewed PRs." },
   { time: "18:00", text: "The machine merged 20 PRs. Zero conflicts." },
 ];
 

@@ -19,44 +19,36 @@ export function LatestPullRequests({ project }: LatestPullRequestsProps) {
       <h2 id="latest-prs-title" className="text-sm font-semibold tracking-wide uppercase">
         Latest pull requests
       </h2>
-      <div
-        role="region"
-        tabIndex={0}
-        aria-label="Latest pull requests table, scrollable"
-        className="mt-4 max-w-full overflow-x-auto rounded-lg [&_[data-slot=table-container]]:overflow-visible outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
-      >
-        <Table>
-          <TableCaption className="sr-only">
-            The {rows.length} latest merged pull requests, newest first
-          </TableCaption>
-          <TableHeader>
-            <TableRow className="text-xs tracking-wide text-ink-soft uppercase">
-              {showProject && <TableHead scope="col">Project</TableHead>}
-              <TableHead scope="col" className={num}>
-                Number
-              </TableHead>
-              <TableHead scope="col">Title</TableHead>
-              <TableHead scope="col" className={num}>
-                Minutes to merge
-              </TableHead>
-              <TableHead scope="col" className={num}>
-                Lines added
-              </TableHead>
+      {/* The scroll container is the labelled region: it takes keyboard focus when the table is wider than the card. */}
+      <Table scrollRegionLabel="Latest pull requests table, scrollable" containerClassName="mt-4 rounded-lg">
+        <TableCaption className="sr-only">The {rows.length} latest merged pull requests, newest first</TableCaption>
+        <TableHeader>
+          <TableRow className="text-xs tracking-wide text-ink-soft uppercase">
+            {showProject && <TableHead scope="col">Project</TableHead>}
+            <TableHead scope="col" className={num}>
+              Number
+            </TableHead>
+            <TableHead scope="col">Title</TableHead>
+            <TableHead scope="col" className={num}>
+              Minutes to merge
+            </TableHead>
+            <TableHead scope="col" className={num}>
+              Lines added
+            </TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {rows.map((pr) => (
+            <TableRow key={`${pr.project}-${pr.number}`}>
+              {showProject && <TableCell className="font-semibold">{pr.project}</TableCell>}
+              <TableCell className={num}>{pr.number}</TableCell>
+              <TableCell className="max-w-[28rem] min-w-[14rem] whitespace-normal">{pr.title}</TableCell>
+              <TableCell className={num}>{pr.minutesToMerge.toFixed(1)}</TableCell>
+              <TableCell className={num}>{pr.additions.toLocaleString("en-US")}</TableCell>
             </TableRow>
-          </TableHeader>
-          <TableBody>
-            {rows.map((pr) => (
-              <TableRow key={`${pr.project}-${pr.number}`}>
-                {showProject && <TableCell className="font-semibold">{pr.project}</TableCell>}
-                <TableCell className={num}>{pr.number}</TableCell>
-                <TableCell className="max-w-[28rem] min-w-[14rem] whitespace-normal">{pr.title}</TableCell>
-                <TableCell className={num}>{pr.minutesToMerge.toFixed(1)}</TableCell>
-                <TableCell className={num}>{pr.additions}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </div>
+          ))}
+        </TableBody>
+      </Table>
     </section>
   );
 }

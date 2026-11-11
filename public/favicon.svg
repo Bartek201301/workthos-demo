@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- workthos: a plush robot head in the palette (docs/design.md): sand-50, forest, lilac, ink. -->
+  <title>workthos</title>
+  <rect width="32" height="32" rx="8" fill="#f6f1e4"/>
+  <path d="M16 9.5V5.5" stroke="#363229" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="16" cy="4.75" r="2.75" fill="#cca7e4"/>
+  <rect x="4" y="9" width="24" height="19" rx="8" fill="#15663c"/>
+  <rect x="9.5" y="14.5" width="4" height="6.5" rx="2" fill="#f6f1e4"/>
+  <rect x="18.5" y="14.5" width="4" height="6.5" rx="2" fill="#f6f1e4"/>
+</svg>

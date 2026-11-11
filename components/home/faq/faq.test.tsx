@@ -29,4 +29,27 @@ describe("Faq", () => {
     await user.keyboard("{Enter}");
     expect(trigger).toHaveAttribute("aria-expanded", "true");
   });
+
+  it("opens an item with the Space key", async () => {
+    const user = userEvent.setup();
+    render(<Faq />);
+    const trigger = screen.getByRole("button", { name: "Does it work with Codex?" });
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    trigger.focus();
+    await user.keyboard(" ");
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("shows the global forest outline on focus, not the faint ring", () => {
+    render(<Faq />);
+    for (const trigger of screen.getAllByRole("button")) {
+      expect(trigger).toHaveClass(
+        "focus-visible:outline-solid",
+        "focus-visible:outline-2",
+        "focus-visible:outline-ring",
+        "focus-visible:ring-0",
+      );
+      expect(trigger).not.toHaveClass("focus-visible:ring-3");
+    }
+  });
 });

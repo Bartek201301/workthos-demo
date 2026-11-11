@@ -33,4 +33,16 @@ describe("DashboardView", () => {
     await user.keyboard(" "); // pressing the selected one must not empty the switch
     expect(hw).toHaveAttribute("aria-pressed", "true");
   });
+
+  it("takes the pressed look and the focus outline from the toggle itself", () => {
+    render(<DashboardView />);
+    for (const item of within(screen.getByRole("group", { name: "Project" })).getAllByRole("button")) {
+      // components/ui/toggle.tsx: pressed is forest with sand-50 text, no important override here.
+      expect(item).toHaveClass("aria-pressed:bg-forest", "aria-pressed:text-sand-50");
+      expect(item.className).not.toContain("!");
+      // Focus is the global forest outline: no outline-none, no faint ring.
+      expect(item).not.toHaveClass("outline-none");
+      expect(item.className).not.toMatch(/focus-visible:ring/);
+    }
+  });
 });

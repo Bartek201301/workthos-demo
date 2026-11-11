@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { GooeyButton, Robot, SectionBackground, type RobotRole, type RobotState } from "@/components/brand";
 
 // docs/prd.md: the three robots appear here, the builder in its working state.
@@ -7,6 +8,13 @@ const cast: { role: RobotRole; state: RobotState }[] = [
   { role: "machine", state: "idle" },
 ];
 
+// The robots grow with the screen: 72 px on a phone, about 98 px at 1024 px
+// and 122 px at 1440 px wide, 128 px at most. BotAvatar draws a quarter of
+// its size past each side of its box (room for a hop or a flip); the list's
+// side padding is that quarter, so the drawing never reaches the edge of the
+// screen and no parent has to clip it.
+const castStyle = { "--hero-robot-size": "clamp(4.5rem, 2.25rem + 6vw, 8rem)" } as CSSProperties;
+
 /**
  * Home section 1 (docs/prd.md): the wordmark, the tagline, the two buttons and
  * the three robots. A server component, and not wrapped in Reveal: it is the
@@ -15,7 +23,7 @@ const cast: { role: RobotRole; state: RobotState }[] = [
 export function Hero() {
   return (
     // `relative isolate`: SectionBackground is an absolute layer behind the content (agreed with the brand task).
-    <section id="hero" className="relative isolate overflow-x-clip">
+    <section id="hero" className="relative isolate">
       <SectionBackground kind="hero" />
       <div className="relative mx-auto max-w-content px-4 py-section-mobile sm:px-6 md:py-section">
         <p className="text-sm font-semibold tracking-wide text-ink-soft uppercase">
@@ -46,10 +54,14 @@ export function Hero() {
               </GooeyButton>
             </div>
           </div>
-          <ul aria-label="The cast" className="flex flex-wrap items-end justify-between gap-2 sm:justify-start sm:gap-6">
+          <ul
+            aria-label="The cast"
+            style={castStyle}
+            className="flex flex-wrap items-end justify-between gap-2 px-[calc(var(--hero-robot-size)/4)] sm:justify-start sm:gap-6 lg:shrink-0"
+          >
             {cast.map((robot) => (
               <li key={robot.role} className="flex flex-col items-center gap-2">
-                <Robot role={robot.role} state={robot.state} size={104} />
+                <Robot role={robot.role} state={robot.state} size="var(--hero-robot-size)" />
                 {/* The robot's accessible name already says its role: the tag is for the eyes only. */}
                 <span
                   aria-hidden="true"

@@ -16,7 +16,12 @@ export function DashboardHeader() {
             {builds} builds, {summary.mergedPullRequests} pull requests, {summary.conflictsInMain} conflicts in main
           </p>
         </div>
-        <div className="flex items-end gap-3">
+        {/*
+          BotAvatar draws a quarter of its size (18 px here) past each side of
+          its box. The 16 px phone gutter is 2 px short of that, so pl-1 keeps
+          the first robot's drawing on screen; from sm the gutter is 24 px.
+        */}
+        <div className="flex items-end gap-3 pl-1 sm:pl-0">
           <Robot role="lead" state="idle" size={72} />
           <Robot role="builder" state="working" size={72} />
           <Robot role="machine" state="idle" size={72} />
