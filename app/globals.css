@@ -1,0 +1,147 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+/* The design tokens (human UI lane). Components use only these, never raw colour values. */
+@import "../styles/tokens.css";
+
+/*
+ * Tokens to Tailwind utilities. `inline` makes each utility use the value
+ * below directly, so a token that styles/tokens.css does not define yet falls
+ * back to the value after the comma.
+ */
+@theme inline {
+  /* Colours: bg-sand-50, text-ink, border-sand-200, fill-chart-1, ... */
+  --color-sand-50: var(--sand-50);
+  --color-sand-100: var(--sand-100);
+  --color-sand-200: var(--sand-200);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-forest: var(--forest);
+  --color-sage: var(--sage);
+  --color-lavender: var(--lavender);
+  --color-lilac: var(--lilac);
+  --color-plum: var(--plum);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* shadcn theme colours: bg-background, text-muted-foreground, ring-ring, ... */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radii: rounded-card, rounded-pill, and the shadcn scale from --radius. */
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* The one soft shadow: shadow-soft. */
+  --shadow-soft: var(--shadow-soft);
+
+  /* Layout: max-w-content, py-section (desktop) and py-section-mobile. */
+  --container-content: var(--content-width);
+  --spacing-section: var(--section-gap);
+  --spacing-section-mobile: var(--section-gap-mobile);
+
+  /* Fonts (next/font sets the variables on <html>): font-display, font-body, font-hand. */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-hand: var(--font-hand);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
+
+  /* Type: text-hero, text-section, text-body, leading-body, tracking-display. */
+  --text-hero: var(--font-size-hero, clamp(4rem, 14vw, 10rem));
+  --text-section: var(--font-size-section, clamp(2.5rem, 6vw, 4.5rem));
+  --text-body: var(--font-size-body, 1.125rem);
+  --text-body--line-height: var(--line-height-body, 1.55);
+  --leading-body: var(--line-height-body, 1.55);
+  --tracking-display: var(--tracking-display, -0.02em);
+
+  /* Motion: translate-y-reveal and animate-reveal (rise and fade in once). */
+  --spacing-reveal: var(--reveal-distance, 24px);
+  --animate-reveal: reveal var(--reveal-duration, 0.5s) ease-out both;
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(var(--reveal-distance, 24px));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* shadcn theme variables, all from the tokens. One light theme: dark mode is out of scope. */
+:root {
+  --background: var(--sand-50);
+  --foreground: var(--ink);
+  --card: var(--sand-50);
+  --card-foreground: var(--ink);
+  --popover: var(--sand-50);
+  --popover-foreground: var(--ink);
+  --primary: var(--forest);
+  --primary-foreground: var(--sand-50);
+  --secondary: var(--sand-100);
+  --secondary-foreground: var(--ink);
+  --muted: var(--sand-100);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--lilac);
+  --accent-foreground: var(--ink);
+  --destructive: var(--plum);
+  --border: var(--sand-200);
+  --input: var(--sand-200);
+  --ring: var(--forest);
+  --radius: var(--radius-card);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-body;
+  }
+  body {
+    @apply bg-background font-body text-body text-foreground;
+  }
+  /*
+   * Focus is visible on every link and button: a ring in forest, with a thin
+   * sand gap inside it so it also shows on the plum footer.
+   */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--sand-50);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal {
+      animation: none;
+    }
+  }
+}
