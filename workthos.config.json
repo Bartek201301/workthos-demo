@@ -1,0 +1,10 @@
+{
+  "repository": "Bartek201301/workthos-demo",
+  "testCommand": "npm ci && npm test && npm run build",
+  "requiredChecks": [
+    "test"
+  ],
+  "leadDir": "../demo-lead",
+  "machineDir": "../machine",
+  "previewDir": "../demo-preview"
+}

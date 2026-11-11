@@ -1,0 +1,28 @@
+/* Design tokens of the workthos website (docs/design.md). Human UI lane: only ui/ tasks change this file. */
+:root {
+  --sand-50: #f6f1e4;
+  --sand-100: #efe7d3;
+  --sand-200: #dbd0b4;
+  --ink: #363229;
+  --ink-soft: #6b6455;
+  --forest: #15663c;
+  --sage: #84ba8f;
+  --lavender: #a980c4;
+  --lilac: #cca7e4;
+  --plum: #59396e;
+
+  --chart-1: var(--forest);
+  --chart-2: var(--lavender);
+  --chart-3: var(--sage);
+  --chart-4: var(--plum);
+  --chart-5: var(--lilac);
+
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --border-card: 2px solid var(--sand-200);
+  --shadow-soft: 0 8px 24px rgb(54 50 41 / 0.08);
+
+  --content-width: 1200px;
+  --section-gap: 120px;
+  --section-gap-mobile: 72px;
+}

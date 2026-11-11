@@ -1,0 +1,956 @@
+{
+  "generatedAt": "2026-11-11T00:36:05Z",
+  "note": "Real pull requests of two builds run with this workflow. HackWin: one lead session, an AI integrator merging, builders in parallel. workthos: the same, with the merge machine taking over at the end.",
+  "projects": [
+    {
+      "name": "HackWin",
+      "description": "CLI for hackathon teams, built 9 to 22 October 2026",
+      "repository": "Bartek201301/HackWin",
+      "summary": {
+        "mergedPullRequests": 86,
+        "abandonedPullRequests": 0,
+        "conflictsInMain": 0,
+        "medianMinutesToMerge": 12.5,
+        "linesAdded": 84150,
+        "linesDeleted": 2623
+      },
+      "pullRequests": [
+        {
+          "number": 30,
+          "title": "1.1 Build workflow: rules, ownership map, task plan, CI",
+          "kind": "task",
+          "openedAt": "2026-10-09T18:00:30Z",
+          "mergedAt": "2026-10-10T17:55:51Z",
+          "minutesToMerge": 1435.3,
+          "additions": 465,
+          "deletions": 0
+        },
+        {
+          "number": 32,
+          "title": "Plan: record the fixture repositories and builder2",
+          "kind": "task",
+          "openedAt": "2026-10-10T18:11:00Z",
+          "mergedAt": "2026-10-11T20:59:21Z",
+          "minutesToMerge": 1608.3,
+          "additions": 12,
+          "deletions": 5
+        },
+        {
+          "number": 33,
+          "title": "1.3a Foundation: package, CLI skeleton, git and GitHub access, contracts",
+          "kind": "task",
+          "openedAt": "2026-10-10T18:43:11Z",
+          "mergedAt": "2026-10-11T21:31:58Z",
+          "minutesToMerge": 1608.8,
+          "additions": 6107,
+          "deletions": 11
+        },
+        {
+          "number": 34,
+          "title": "1.2 Platform verification: docs/verification.md",
+          "kind": "task",
+          "openedAt": "2026-10-10T23:57:58Z",
+          "mergedAt": "2026-10-11T22:13:17Z",
+          "minutesToMerge": 1335.3,
+          "additions": 419,
+          "deletions": 0
+        },
+        {
+          "number": 36,
+          "title": "1.3c Foundation: local state, worktrees, project commands, changes on main",
+          "kind": "task",
+          "openedAt": "2026-10-11T22:18:05Z",
+          "mergedAt": "2026-10-11T22:26:45Z",
+          "minutesToMerge": 8.7,
+          "additions": 1849,
+          "deletions": 0
+        },
+        {
+          "number": 38,
+          "title": "1.3b Foundation: configuration, ownership, tasks, labels, secret scan, version check",
+          "kind": "task",
+          "openedAt": "2026-10-11T22:32:56Z",
+          "mergedAt": "2026-10-12T10:26:18Z",
+          "minutesToMerge": 713.4,
+          "additions": 4307,
+          "deletions": 17
+        },
+        {
+          "number": 39,
+          "title": "Foundation follow-up: use parseBranch and Config of 1.3b, record the decisions of #36 and #38",
+          "kind": "task",
+          "openedAt": "2026-10-12T10:51:25Z",
+          "mergedAt": "2026-10-12T11:02:31Z",
+          "minutesToMerge": 11.1,
+          "additions": 24,
+          "deletions": 34
+        },
+        {
+          "number": 40,
+          "title": "1.3d Foundation: test harness with the machine account",
+          "kind": "task",
+          "openedAt": "2026-10-12T11:29:53Z",
+          "mergedAt": "2026-10-12T12:31:17Z",
+          "minutesToMerge": 61.4,
+          "additions": 8666,
+          "deletions": 3
+        },
+        {
+          "number": 42,
+          "title": "1.3e Shared: protection state reader",
+          "kind": "task",
+          "openedAt": "2026-10-12T13:14:34Z",
+          "mergedAt": "2026-10-12T16:23:09Z",
+          "minutesToMerge": 188.6,
+          "additions": 909,
+          "deletions": 3
+        },
+        {
+          "number": 43,
+          "title": "1.5d ship: merge main and local checks",
+          "kind": "task",
+          "openedAt": "2026-10-12T13:20:44Z",
+          "mergedAt": "2026-10-12T13:42:27Z",
+          "minutesToMerge": 21.7,
+          "additions": 1161,
+          "deletions": 0
+        },
+        {
+          "number": 44,
+          "title": "1.4a Git hooks: pre-commit and pre-push",
+          "kind": "task",
+          "openedAt": "2026-10-12T13:22:52Z",
+          "mergedAt": "2026-10-12T13:39:39Z",
+          "minutesToMerge": 16.8,
+          "additions": 1559,
+          "deletions": 0
+        },
+        {
+          "number": 45,
+          "title": "1.5a take: checks and the queue",
+          "kind": "task",
+          "openedAt": "2026-10-12T13:26:37Z",
+          "mergedAt": "2026-10-12T13:43:18Z",
+          "minutesToMerge": 16.7,
+          "additions": 1174,
+          "deletions": 0
+        },
+        {
+          "number": 47,
+          "title": "Docs: record the harness, hackwin-test-builder3 and the workflow fixes in the plan and contracts",
+          "kind": "task",
+          "openedAt": "2026-10-12T16:34:08Z",
+          "mergedAt": "2026-10-14T22:47:47Z",
+          "minutesToMerge": 3253.7,
+          "additions": 24,
+          "deletions": 8
+        },
+        {
+          "number": 48,
+          "title": "Add ship steps 10 to 15: push, pull request, report and rerun",
+          "kind": "task",
+          "openedAt": "2026-10-12T16:36:43Z",
+          "mergedAt": "2026-10-13T00:11:08Z",
+          "minutesToMerge": 454.4,
+          "additions": 897,
+          "deletions": 189
+        },
+        {
+          "number": 49,
+          "title": "1.5b take: worktree, labels, prompt and agent start",
+          "kind": "task",
+          "openedAt": "2026-10-12T17:00:36Z",
+          "mergedAt": "2026-10-13T00:12:09Z",
+          "minutesToMerge": 431.6,
+          "additions": 1955,
+          "deletions": 156
+        },
+        {
+          "number": 50,
+          "title": "1.4e join: checklist, active hooks, personal settings and the queue",
+          "kind": "task",
+          "openedAt": "2026-10-12T17:06:10Z",
+          "mergedAt": "2026-10-13T00:13:04Z",
+          "minutesToMerge": 426.9,
+          "additions": 1317,
+          "deletions": 0
+        },
+        {
+          "number": 51,
+          "title": "1.4b CI workflow and internal ci",
+          "kind": "task",
+          "openedAt": "2026-10-12T17:13:26Z",
+          "mergedAt": "2026-10-14T22:48:50Z",
+          "minutesToMerge": 3215.4,
+          "additions": 2387,
+          "deletions": 2
+        },
+        {
+          "number": 52,
+          "title": "Gate: process, lock, keep awake, state file, terminal input",
+          "kind": "task",
+          "openedAt": "2026-10-12T17:15:15Z",
+          "mergedAt": "2026-10-13T00:13:56Z",
+          "minutesToMerge": 418.7,
+          "additions": 2148,
+          "deletions": 0
+        },
+        {
+          "number": 53,
+          "title": "Test log: the merges of 10 to 14 October",
+          "kind": "log",
+          "openedAt": "2026-10-14T22:53:47Z",
+          "mergedAt": "2026-10-14T22:55:20Z",
+          "minutesToMerge": 1.6,
+          "additions": 331,
+          "deletions": 0
+        },
+        {
+          "number": 54,
+          "title": "Tooling: run npm run test:ac through a Node script, not sh -c",
+          "kind": "task",
+          "openedAt": "2026-10-14T23:04:38Z",
+          "mergedAt": "2026-10-14T23:14:38Z",
+          "minutesToMerge": 10.0,
+          "additions": 102,
+          "deletions": 18
+        },
+        {
+          "number": 55,
+          "title": "1.5c take: resume, release and fix prompt",
+          "kind": "task",
+          "openedAt": "2026-10-14T23:08:08Z",
+          "mergedAt": "2026-10-14T23:17:34Z",
+          "minutesToMerge": 9.4,
+          "additions": 1657,
+          "deletions": 148
+        },
+        {
+          "number": 56,
+          "title": "1.6b gate: status issue",
+          "kind": "task",
+          "openedAt": "2026-10-14T23:09:52Z",
+          "mergedAt": "2026-10-14T23:26:58Z",
+          "minutesToMerge": 17.1,
+          "additions": 1753,
+          "deletions": 50
+        },
+        {
+          "number": 58,
+          "title": "1.4c Claude Code settings, hooks and command wrappers",
+          "kind": "task",
+          "openedAt": "2026-10-14T23:25:22Z",
+          "mergedAt": "2026-10-14T23:55:00Z",
+          "minutesToMerge": 29.6,
+          "additions": 3251,
+          "deletions": 1
+        },
+        {
+          "number": 59,
+          "title": "Shared follow-up: config exports, rule set handlers in the harness, ship's log place, stricter isGreen",
+          "kind": "task",
+          "openedAt": "2026-10-14T23:37:00Z",
+          "mergedAt": "2026-10-14T23:48:38Z",
+          "minutesToMerge": 11.6,
+          "additions": 1365,
+          "deletions": 406
+        },
+        {
+          "number": 62,
+          "title": "1.4h Lane A follow-up: the CI token by environment, join's merged field, the hooks' config loader",
+          "kind": "task",
+          "openedAt": "2026-10-15T00:07:40Z",
+          "mergedAt": "2026-10-15T00:23:34Z",
+          "minutesToMerge": 15.9,
+          "additions": 392,
+          "deletions": 79
+        },
+        {
+          "number": 63,
+          "title": "Shared follow-up 2: reset retries, shared task constants, contracts and plan records",
+          "kind": "task",
+          "openedAt": "2026-10-15T00:09:04Z",
+          "mergedAt": "2026-10-15T00:16:25Z",
+          "minutesToMerge": 7.3,
+          "additions": 497,
+          "deletions": 38
+        },
+        {
+          "number": 64,
+          "title": "1.6c gate: intake and stages 1 to 6",
+          "kind": "task",
+          "openedAt": "2026-10-15T00:11:08Z",
+          "mergedAt": "2026-10-15T04:41:16Z",
+          "minutesToMerge": 270.1,
+          "additions": 3295,
+          "deletions": 12
+        },
+        {
+          "number": 65,
+          "title": "1.4d setup: questions, detection, generated files, bootstrap commit",
+          "kind": "task",
+          "openedAt": "2026-10-15T04:34:37Z",
+          "mergedAt": "2026-10-15T05:09:51Z",
+          "minutesToMerge": 35.2,
+          "additions": 4774,
+          "deletions": 2
+        },
+        {
+          "number": 67,
+          "title": "Contracts: the Gate comment marker, and enforceVersion in 4.4",
+          "kind": "task",
+          "openedAt": "2026-10-15T04:48:06Z",
+          "mergedAt": "2026-10-15T04:55:53Z",
+          "minutesToMerge": 7.8,
+          "additions": 28,
+          "deletions": 2
+        },
+        {
+          "number": 68,
+          "title": "1.5f take: the Gate's comment by its marker, resume after release, worktree state",
+          "kind": "task",
+          "openedAt": "2026-10-15T05:01:13Z",
+          "mergedAt": "2026-10-15T05:14:21Z",
+          "minutesToMerge": 13.1,
+          "additions": 572,
+          "deletions": 79
+        },
+        {
+          "number": 69,
+          "title": "1.6d gate: stages 7 to 11",
+          "kind": "task",
+          "openedAt": "2026-10-15T05:21:50Z",
+          "mergedAt": "2026-10-15T05:59:37Z",
+          "minutesToMerge": 37.8,
+          "additions": 3559,
+          "deletions": 137
+        },
+        {
+          "number": 70,
+          "title": "1.4f setup: labels, invitations, branch rules, push protection, resume",
+          "kind": "task",
+          "openedAt": "2026-10-15T05:48:01Z",
+          "mergedAt": "2026-10-20T00:35:44Z",
+          "minutesToMerge": 6887.7,
+          "additions": 2950,
+          "deletions": 105
+        },
+        {
+          "number": 72,
+          "title": "Shared follow-up 3: the runner's unreachable hook, contracts 5.6 and 5.7",
+          "kind": "task",
+          "openedAt": "2026-10-15T06:15:52Z",
+          "mergedAt": "2026-10-15T06:27:23Z",
+          "minutesToMerge": 11.5,
+          "additions": 413,
+          "deletions": 15
+        },
+        {
+          "number": 73,
+          "title": "1.6f status: who does what, the merge queue, what is blocked and the Gate digest",
+          "kind": "task",
+          "openedAt": "2026-10-15T06:22:20Z",
+          "mergedAt": "2026-10-15T06:46:00Z",
+          "minutesToMerge": 23.7,
+          "additions": 2556,
+          "deletions": 0
+        },
+        {
+          "number": 77,
+          "title": "Shared follow-up 4: an issue is a task only when a team member wrote it; safe task block errors",
+          "kind": "task",
+          "openedAt": "2026-10-15T06:56:02Z",
+          "mergedAt": "2026-10-15T07:01:58Z",
+          "minutesToMerge": 5.9,
+          "additions": 405,
+          "deletions": 71
+        },
+        {
+          "number": 80,
+          "title": "1.6e gate: restarts, errors and repeated failures",
+          "kind": "task",
+          "openedAt": "2026-10-15T07:03:19Z",
+          "mergedAt": "2026-10-15T08:58:03Z",
+          "minutesToMerge": 114.7,
+          "additions": 3858,
+          "deletions": 222
+        },
+        {
+          "number": 81,
+          "title": "Shared follow-up 5: milestones in the fake GitHub",
+          "kind": "task",
+          "openedAt": "2026-10-15T07:12:49Z",
+          "mergedAt": "2026-10-15T07:18:23Z",
+          "minutesToMerge": 5.6,
+          "additions": 256,
+          "deletions": 2
+        },
+        {
+          "number": 82,
+          "title": "1.5g take: no task from an outsider, and safe block errors",
+          "kind": "task",
+          "openedAt": "2026-10-15T07:16:06Z",
+          "mergedAt": "2026-10-15T07:23:22Z",
+          "minutesToMerge": 7.3,
+          "additions": 267,
+          "deletions": 8
+        },
+        {
+          "number": 83,
+          "title": "1.4i internal ci: no task link to an outsider's issue; join's install log under logs/",
+          "kind": "task",
+          "openedAt": "2026-10-15T07:17:34Z",
+          "mergedAt": "2026-10-15T07:30:18Z",
+          "minutesToMerge": 12.7,
+          "additions": 174,
+          "deletions": 25
+        },
+        {
+          "number": 84,
+          "title": "Status: the team through writtenByTeam, milestones from the fake GitHub",
+          "kind": "task",
+          "openedAt": "2026-10-15T07:36:18Z",
+          "mergedAt": "2026-10-15T07:41:11Z",
+          "minutesToMerge": 4.9,
+          "additions": 212,
+          "deletions": 103
+        },
+        {
+          "number": 86,
+          "title": "Shared follow-up 6: export shown, join's log helper, contracts 4.5 and 5.6",
+          "kind": "task",
+          "openedAt": "2026-10-15T07:50:37Z",
+          "mergedAt": "2026-10-15T08:43:54Z",
+          "minutesToMerge": 53.3,
+          "additions": 44,
+          "deletions": 5
+        },
+        {
+          "number": 88,
+          "title": "Contracts: Gate error markers in 5.7, stage 7 in 4.5",
+          "kind": "task",
+          "openedAt": "2026-10-15T09:07:12Z",
+          "mergedAt": "2026-10-15T09:12:33Z",
+          "minutesToMerge": 5.3,
+          "additions": 16,
+          "deletions": 11
+        },
+        {
+          "number": 89,
+          "title": "Test log: the merges of 14 and 15 October",
+          "kind": "log",
+          "openedAt": "2026-10-15T09:16:06Z",
+          "mergedAt": "2026-10-15T09:18:29Z",
+          "minutesToMerge": 2.4,
+          "additions": 483,
+          "deletions": 0
+        },
+        {
+          "number": 92,
+          "title": "1.4j join: the install runs with the command's environment",
+          "kind": "task",
+          "openedAt": "2026-10-16T18:17:02Z",
+          "mergedAt": "2026-10-20T00:41:45Z",
+          "minutesToMerge": 4704.7,
+          "additions": 33,
+          "deletions": 2
+        },
+        {
+          "number": 93,
+          "title": "take and ship: project commands with the command's environment",
+          "kind": "task",
+          "openedAt": "2026-10-16T18:18:49Z",
+          "mergedAt": "2026-10-20T00:47:27Z",
+          "minutesToMerge": 4708.6,
+          "additions": 78,
+          "deletions": 6
+        },
+        {
+          "number": 95,
+          "title": "1.4g setup --regenerate",
+          "kind": "task",
+          "openedAt": "2026-10-20T01:10:01Z",
+          "mergedAt": "2026-10-20T01:34:20Z",
+          "minutesToMerge": 24.3,
+          "additions": 935,
+          "deletions": 31
+        },
+        {
+          "number": 99,
+          "title": "Plan 6: the manual check names the undocumented forms; AGENTS.md on Markdown-only tasks",
+          "kind": "task",
+          "openedAt": "2026-10-20T01:45:00Z",
+          "mergedAt": "2026-10-20T01:55:21Z",
+          "minutesToMerge": 10.3,
+          "additions": 6,
+          "deletions": 3
+        },
+        {
+          "number": 100,
+          "title": "1.4k PreToolUse: the gh api merge that ends at merge, and git push --all",
+          "kind": "task",
+          "openedAt": "2026-10-20T01:51:20Z",
+          "mergedAt": "2026-10-20T02:01:48Z",
+          "minutesToMerge": 10.5,
+          "additions": 16,
+          "deletions": 1
+        },
+        {
+          "number": 101,
+          "title": "Verification row 2: the deny patterns of PR #95",
+          "kind": "task",
+          "openedAt": "2026-10-20T01:51:31Z",
+          "mergedAt": "2026-10-20T02:07:57Z",
+          "minutesToMerge": 16.4,
+          "additions": 22,
+          "deletions": 4
+        },
+        {
+          "number": 107,
+          "title": "1.7d Integration: version rule and a bug fix release in the same phase",
+          "kind": "task",
+          "openedAt": "2026-10-20T02:27:18Z",
+          "mergedAt": "2026-10-20T10:43:40Z",
+          "minutesToMerge": 496.4,
+          "additions": 1967,
+          "deletions": 0
+        },
+        {
+          "number": 108,
+          "title": "Harness guard: a live scenario's gh calls reach only its fixture repository",
+          "kind": "task",
+          "openedAt": "2026-10-20T02:30:46Z",
+          "mergedAt": "2026-10-20T02:36:49Z",
+          "minutesToMerge": 6.0,
+          "additions": 258,
+          "deletions": 16
+        },
+        {
+          "number": 109,
+          "title": "1.7c Integration: terminal and Claude Code parity, solo mode, command set",
+          "kind": "task",
+          "openedAt": "2026-10-20T02:32:01Z",
+          "mergedAt": "2026-10-20T16:38:34Z",
+          "minutesToMerge": 846.5,
+          "additions": 2065,
+          "deletions": 0
+        },
+        {
+          "number": 110,
+          "title": "Harness: a lock left by a dead process is taken over whatever the hostname; guard residuals",
+          "kind": "task",
+          "openedAt": "2026-10-20T03:08:00Z",
+          "mergedAt": "2026-10-20T03:18:23Z",
+          "minutesToMerge": 10.4,
+          "additions": 297,
+          "deletions": 11
+        },
+        {
+          "number": 111,
+          "title": "Test log: the merges of 20 October",
+          "kind": "log",
+          "openedAt": "2026-10-20T03:22:06Z",
+          "mergedAt": "2026-10-20T03:25:03Z",
+          "minutesToMerge": 3.0,
+          "additions": 170,
+          "deletions": 0
+        },
+        {
+          "number": 113,
+          "title": "Version 0.1.0-pre.1 on main for the first pre-releases",
+          "kind": "task",
+          "openedAt": "2026-10-20T09:18:39Z",
+          "mergedAt": "2026-10-20T09:23:24Z",
+          "minutesToMerge": 4.8,
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "number": 114,
+          "title": "1.7a Integration: a task written by hand from take to merge",
+          "kind": "task",
+          "openedAt": "2026-10-20T10:41:39Z",
+          "mergedAt": "2026-10-20T16:27:22Z",
+          "minutesToMerge": 345.7,
+          "additions": 2225,
+          "deletions": 0
+        },
+        {
+          "number": 117,
+          "title": "Release scenarios: the offline Gates keep the laptop awake through a stand-in",
+          "kind": "task",
+          "openedAt": "2026-10-20T11:11:16Z",
+          "mergedAt": "2026-10-20T11:23:36Z",
+          "minutesToMerge": 12.3,
+          "additions": 73,
+          "deletions": 4
+        },
+        {
+          "number": 118,
+          "title": "1.7b Integration: enforcement across layers",
+          "kind": "task",
+          "openedAt": "2026-10-20T11:23:12Z",
+          "mergedAt": "2026-10-20T17:16:31Z",
+          "minutesToMerge": 353.3,
+          "additions": 2203,
+          "deletions": 0
+        },
+        {
+          "number": 120,
+          "title": "status: a closed status issue counts only when its own issue carries the label gate-status",
+          "kind": "task",
+          "openedAt": "2026-10-20T11:44:28Z",
+          "mergedAt": "2026-10-20T16:07:17Z",
+          "minutesToMerge": 262.8,
+          "additions": 164,
+          "deletions": 2
+        },
+        {
+          "number": 121,
+          "title": "Harness lock: onWait comes before the timeout, and ps time does not count against it",
+          "kind": "task",
+          "openedAt": "2026-10-20T11:45:15Z",
+          "mergedAt": "2026-10-20T16:11:25Z",
+          "minutesToMerge": 266.2,
+          "additions": 59,
+          "deletions": 7
+        },
+        {
+          "number": 122,
+          "title": "Test log: the merges of 20 October, wave 3",
+          "kind": "log",
+          "openedAt": "2026-10-20T17:21:10Z",
+          "mergedAt": "2026-10-20T17:24:32Z",
+          "minutesToMerge": 3.4,
+          "additions": 233,
+          "deletions": 0
+        },
+        {
+          "number": 126,
+          "title": "Contracts 6.2: which build a live scenario installs, and HACKWIN_TEST_PRERELEASE",
+          "kind": "task",
+          "openedAt": "2026-10-20T17:27:52Z",
+          "mergedAt": "2026-10-20T17:33:16Z",
+          "minutesToMerge": 5.4,
+          "additions": 6,
+          "deletions": 0
+        },
+        {
+          "number": 128,
+          "title": "Version 0.1.0-pre.2 on main for pre-release build 2",
+          "kind": "task",
+          "openedAt": "2026-10-20T19:14:07Z",
+          "mergedAt": "2026-10-20T19:19:00Z",
+          "minutesToMerge": 4.9,
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "number": 130,
+          "title": "Test log: build 2 and the merges of 20 October after #122",
+          "kind": "log",
+          "openedAt": "2026-10-20T19:34:15Z",
+          "mergedAt": "2026-10-20T19:38:38Z",
+          "minutesToMerge": 4.4,
+          "additions": 55,
+          "deletions": 2
+        },
+        {
+          "number": 131,
+          "title": "Offline fixtures: no background git maintenance, so a local clone does not race a repack",
+          "kind": "task",
+          "openedAt": "2026-10-20T19:38:20Z",
+          "mergedAt": "2026-10-20T19:44:22Z",
+          "minutesToMerge": 6.0,
+          "additions": 58,
+          "deletions": 2
+        },
+        {
+          "number": 134,
+          "title": "Plan section 9, decision 12: the documents guide, and design.md as the visual design",
+          "kind": "task",
+          "openedAt": "2026-10-20T20:27:24Z",
+          "mergedAt": "2026-10-20T20:33:17Z",
+          "minutesToMerge": 5.9,
+          "additions": 1,
+          "deletions": 0
+        },
+        {
+          "number": 135,
+          "title": "1.4l setup: one guide to six documents instead of the skeletons",
+          "kind": "task",
+          "openedAt": "2026-10-20T20:40:19Z",
+          "mergedAt": "2026-10-20T20:46:47Z",
+          "minutesToMerge": 6.5,
+          "additions": 323,
+          "deletions": 86
+        },
+        {
+          "number": 137,
+          "title": "Git fetch: try again when another process in the same clone updated the ref",
+          "kind": "task",
+          "openedAt": "2026-10-20T20:59:38Z",
+          "mergedAt": "2026-10-20T21:05:56Z",
+          "minutesToMerge": 6.3,
+          "additions": 100,
+          "deletions": 5
+        },
+        {
+          "number": 138,
+          "title": "Test log: the merges of 20 October after #130",
+          "kind": "log",
+          "openedAt": "2026-10-20T21:09:35Z",
+          "mergedAt": "2026-10-20T21:12:48Z",
+          "minutesToMerge": 3.2,
+          "additions": 71,
+          "deletions": 0
+        },
+        {
+          "number": 140,
+          "title": "Plan: the manual check per release in auto mode and with bypass permissions (#139)",
+          "kind": "task",
+          "openedAt": "2026-10-21T23:34:13Z",
+          "mergedAt": "2026-10-22T00:03:30Z",
+          "minutesToMerge": 29.3,
+          "additions": 4,
+          "deletions": 2
+        },
+        {
+          "number": 141,
+          "title": "Test log: the manual check per release on 0.1.0-pre.2",
+          "kind": "log",
+          "openedAt": "2026-10-21T23:34:29Z",
+          "mergedAt": "2026-10-21T23:39:10Z",
+          "minutesToMerge": 4.7,
+          "additions": 35,
+          "deletions": 0
+        },
+        {
+          "number": 144,
+          "title": "runIn: one line to paste, cd <dir> && <command>, for every run-this message (#143)",
+          "kind": "task",
+          "openedAt": "2026-10-21T23:56:18Z",
+          "mergedAt": "2026-10-22T00:06:42Z",
+          "minutesToMerge": 10.4,
+          "additions": 102,
+          "deletions": 73
+        },
+        {
+          "number": 150,
+          "title": "status and Gate: the next command, plain words first, clean labels (#148)",
+          "kind": "task",
+          "openedAt": "2026-10-22T00:31:29Z",
+          "mergedAt": "2026-10-22T00:53:32Z",
+          "minutesToMerge": 22.1,
+          "additions": 263,
+          "deletions": 36
+        },
+        {
+          "number": 151,
+          "title": "1.5i ship: a filled pull request body, and a refusal that says what to do",
+          "kind": "task",
+          "openedAt": "2026-10-22T00:38:16Z",
+          "mergedAt": "2026-10-22T00:50:27Z",
+          "minutesToMerge": 12.2,
+          "additions": 536,
+          "deletions": 29
+        },
+        {
+          "number": 152,
+          "title": "setup: plain questions, friendly event times, a message per member, clear next steps (#145)",
+          "kind": "task",
+          "openedAt": "2026-10-22T00:38:18Z",
+          "mergedAt": "2026-10-22T00:47:28Z",
+          "minutesToMerge": 9.2,
+          "additions": 842,
+          "deletions": 174
+        },
+        {
+          "number": 153,
+          "title": "Generated files: a guide to the CLI, a task template that knows the team, an allow list (#146)",
+          "kind": "task",
+          "openedAt": "2026-10-22T00:58:40Z",
+          "mergedAt": "2026-10-22T01:22:12Z",
+          "minutesToMerge": 23.5,
+          "additions": 991,
+          "deletions": 57
+        },
+        {
+          "number": 155,
+          "title": "take: the task prompt leaves out the HTML comments of the issue (#154)",
+          "kind": "task",
+          "openedAt": "2026-10-22T01:14:07Z",
+          "mergedAt": "2026-10-22T01:26:28Z",
+          "minutesToMerge": 12.3,
+          "additions": 361,
+          "deletions": 4
+        },
+        {
+          "number": 156,
+          "title": "README with the whole workflow, take in the help, friendly task deadlines, plan decision 14 (#149)",
+          "kind": "task",
+          "openedAt": "2026-10-22T01:33:24Z",
+          "mergedAt": "2026-10-22T01:50:09Z",
+          "minutesToMerge": 16.8,
+          "additions": 339,
+          "deletions": 62
+        },
+        {
+          "number": 158,
+          "title": "Test log: the merges of 22 October, decision 13 to the usability tasks",
+          "kind": "log",
+          "openedAt": "2026-10-22T01:55:39Z",
+          "mergedAt": "2026-10-22T01:59:27Z",
+          "minutesToMerge": 3.8,
+          "additions": 263,
+          "deletions": 0
+        },
+        {
+          "number": 159,
+          "title": "Version 0.1.0-pre.3 on main for pre-release build 3",
+          "kind": "task",
+          "openedAt": "2026-10-22T01:55:52Z",
+          "mergedAt": "2026-10-22T02:03:43Z",
+          "minutesToMerge": 7.8,
+          "additions": 3,
+          "deletions": 3
+        },
+        {
+          "number": 160,
+          "title": "Test log: pre-release build 3",
+          "kind": "log",
+          "openedAt": "2026-10-22T02:09:25Z",
+          "mergedAt": "2026-10-22T02:12:52Z",
+          "minutesToMerge": 3.5,
+          "additions": 24,
+          "deletions": 0
+        },
+        {
+          "number": 161,
+          "title": "Test log: live scenarios on pre-release build 3",
+          "kind": "log",
+          "openedAt": "2026-10-22T02:29:30Z",
+          "mergedAt": "2026-10-22T02:33:01Z",
+          "minutesToMerge": 3.5,
+          "additions": 22,
+          "deletions": 0
+        },
+        {
+          "number": 163,
+          "title": "Harness: the reset reads again while GitHub still lists an issue it just closed (#162)",
+          "kind": "task",
+          "openedAt": "2026-10-22T02:44:56Z",
+          "mergedAt": "2026-10-22T03:03:35Z",
+          "minutesToMerge": 18.6,
+          "additions": 133,
+          "deletions": 7
+        },
+        {
+          "number": 164,
+          "title": "Test log: manual check of 0.1.0-pre.3, and the merge of #163",
+          "kind": "log",
+          "openedAt": "2026-10-22T11:09:19Z",
+          "mergedAt": "2026-10-22T11:13:35Z",
+          "minutesToMerge": 4.3,
+          "additions": 55,
+          "deletions": 0
+        },
+        {
+          "number": 166,
+          "title": "Three texts of the pre.3 check: setup's .env.local step, /gate while a Gate runs, ship's step 12 (#165)",
+          "kind": "task",
+          "openedAt": "2026-10-22T11:24:22Z",
+          "mergedAt": "2026-10-22T11:32:17Z",
+          "minutesToMerge": 7.9,
+          "additions": 160,
+          "deletions": 18
+        },
+        {
+          "number": 168,
+          "title": "Version 0.1.0 on main (#167)",
+          "kind": "task",
+          "openedAt": "2026-10-22T11:39:12Z",
+          "mergedAt": "2026-10-22T11:46:20Z",
+          "minutesToMerge": 7.1,
+          "additions": 3,
+          "deletions": 3
+        }
+      ]
+    },
+    {
+      "name": "workthos",
+      "description": "this workflow itself, built 10 to 11 November 2026",
+      "repository": "Bartek201301/workthos",
+      "summary": {
+        "mergedPullRequests": 6,
+        "abandonedPullRequests": 0,
+        "conflictsInMain": 0,
+        "medianMinutesToMerge": 5.2,
+        "linesAdded": 10631,
+        "linesDeleted": 12
+      },
+      "pullRequests": [
+        {
+          "number": 2,
+          "title": "Foundation: layout, CI, owners.yml and shared contract code",
+          "kind": "task",
+          "openedAt": "2026-11-10T20:13:20Z",
+          "mergedAt": "2026-11-10T21:14:21Z",
+          "minutesToMerge": 61.0,
+          "additions": 1504,
+          "deletions": 1
+        },
+        {
+          "number": 6,
+          "title": "Lane C: init and the rules templates",
+          "kind": "task",
+          "openedAt": "2026-11-10T21:21:24Z",
+          "mergedAt": "2026-11-10T21:26:55Z",
+          "minutesToMerge": 5.5,
+          "additions": 691,
+          "deletions": 0
+        },
+        {
+          "number": 8,
+          "title": "Lane B: scope guard hook and deny rules",
+          "kind": "task",
+          "openedAt": "2026-11-10T21:41:35Z",
+          "mergedAt": "2026-11-10T21:59:01Z",
+          "minutesToMerge": 17.4,
+          "additions": 2452,
+          "deletions": 0
+        },
+        {
+          "number": 9,
+          "title": "Lane A: merge machine (run, check, overlap)",
+          "kind": "task",
+          "openedAt": "2026-11-10T21:48:43Z",
+          "mergedAt": "2026-11-10T21:52:12Z",
+          "minutesToMerge": 3.5,
+          "additions": 3932,
+          "deletions": 0
+        },
+        {
+          "number": 10,
+          "title": "Integrator: spec rulings, repository config and the scope guard (handover)",
+          "kind": "task",
+          "openedAt": "2026-11-10T23:52:00Z",
+          "mergedAt": "2026-11-10T23:54:30Z",
+          "minutesToMerge": 2.5,
+          "additions": 2035,
+          "deletions": 10
+        },
+        {
+          "number": 12,
+          "title": "Lane C follow-up: machine lane comment and lead rules",
+          "kind": "task",
+          "openedAt": "2026-11-10T23:56:57Z",
+          "mergedAt": "2026-11-11T00:01:47Z",
+          "minutesToMerge": 4.8,
+          "additions": 17,
+          "deletions": 1
+        }
+      ]
+    }
+  ]
+}

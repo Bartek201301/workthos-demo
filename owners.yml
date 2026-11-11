@@ -1,0 +1,11 @@
+# Lanes of the workthos website (docs/spec.md, "Folder layout and owners").
+# A file in a lane may change only in a task of that lane.
+lanes:
+  human-ui:   # design tokens; only ui/ tasks
+    paths: ["styles/**"]
+  contracts:  # build data; only tasks labelled contracts
+    paths: ["data/**"]
+  docs:       # prd, spec, design, assets; builders read only
+    paths: ["docs/**"]
+  machine:    # workthos files; only a machine task the human asked for
+    paths: [".claude/**", ".agents/**", ".github/**", "owners.yml", "workthos.config.json", "skills-lock.json"]
