@@ -39,7 +39,7 @@ export type BuildStats = {
 
 export type ProjectFilter = "HackWin" | "workthos" | "both";
 
-/** A pull request with the name of its project (numbers repeat across projects). */
+/** A pull request with the name of its project: a number is only unique within one repository. */
 export type ProjectPullRequest = PullRequest & { project: string };
 
 export type MergedPerDay = { date: string; merged: number };
