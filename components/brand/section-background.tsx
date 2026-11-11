@@ -26,13 +26,12 @@ function HeroGrainient() {
   return (
     <Grainient
       colors={colours}
-      angle={160}
+      angle={125}
       speed={0.35}
       flow={0.6}
       silk={0.2}
       grainAmount={0.035}
       grainAnimated={false}
-      saturation={0.9}
       interactive={false}
       clickSwirl={false}
     />
@@ -49,11 +48,14 @@ function HeroGrainient() {
 export function SectionBackground({ kind }: SectionBackgroundProps) {
   const reduce = usePrefersReducedMotion();
   if (reduce) return null;
+  // opacity-25 keeps the hero's ink-soft text at 4.5:1 or more wherever the
+  // lilac or sage drifts: at most a quarter of either over sand-50. It fades
+  // out over the lower part of the section (the mask) into the next one.
   return (
     <div
       aria-hidden="true"
       data-section-background={kind}
-      className="pointer-events-none absolute inset-0 -z-10 mask-b-from-60% select-none"
+      className="pointer-events-none absolute inset-0 -z-10 opacity-25 mask-b-from-60% select-none"
     >
       <HeroGrainient />
     </div>

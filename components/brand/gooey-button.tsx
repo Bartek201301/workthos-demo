@@ -36,15 +36,16 @@ function Control({ action, className, children }: { action: Action; className: s
   );
 }
 
-// How far the drop slides out of the pill's right end on hover or focus, in px.
+// How far the drop runs down out of the pill on hover or focus, in px.
 const DROP_TRAVEL = 18;
 
 /**
  * The primary button: a forest pill on a liquid-gooey surface. On hover or
- * focus a small drop of the same liquid slides out of its end and is pulled
- * back in when the pointer or the focus leaves. The pill itself is also
- * painted in forest, so it looks the same before the liquid is measured and
- * without JavaScript. Under reduced motion the drop stays inside.
+ * focus a small drop of the same liquid runs down out of the pill, near its
+ * end, and is pulled back in when the pointer or the focus leaves. It drips
+ * down rather than sideways so it never reaches a button next to it. The pill
+ * itself is also painted in forest, so it looks the same before the liquid is
+ * measured and without JavaScript. Under reduced motion the drop stays inside.
  */
 function PrimaryButton({ action, className, children }: { action: Action; className?: string; children: ReactNode }) {
   const reduce = usePrefersReducedMotion();
@@ -68,9 +69,9 @@ function PrimaryButton({ action, className, children }: { action: Action; classN
         </Control>
       </Liquid.Item>
       <Liquid.Item
-        x={open ? DROP_TRAVEL : 0}
+        y={open ? DROP_TRAVEL : 0}
         transition="bouncy"
-        style={{ position: "absolute", top: "calc(50% - 0.4375rem)", right: "0.75rem", pointerEvents: "none" }}
+        style={{ position: "absolute", bottom: "0.25rem", right: "1.75rem", pointerEvents: "none" }}
       >
         <span aria-hidden="true" className="block size-3.5 rounded-pill" />
       </Liquid.Item>
