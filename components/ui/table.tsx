@@ -3,11 +3,31 @@
 import * as React from "react"
 import { cn } from "cn"
 
-function Table({ className, ...props }: React.ComponentProps<"table">) {
+type TableProps = React.ComponentProps<"table"> & {
+  /**
+   * workthos: names the scroll container and makes it a region the keyboard
+   * can focus, so a table wider than the screen scrolls with the arrow keys.
+   * Its focus shows the global outline of app/globals.css.
+   */
+  scrollRegionLabel?: string
+  /** Classes for the scroll container. */
+  containerClassName?: string
+}
+
+function Table({
+  className,
+  scrollRegionLabel,
+  containerClassName,
+  ...props
+}: TableProps) {
+  const region = scrollRegionLabel
+    ? { role: "region", tabIndex: 0, "aria-label": scrollRegionLabel }
+    : {}
   return (
     <div
       data-slot="table-container"
-      className="relative w-full overflow-x-auto"
+      className={cn("relative w-full overflow-x-auto", containerClassName)}
+      {...region}
     >
       <table
         data-slot="table"

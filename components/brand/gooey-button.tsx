@@ -1,7 +1,7 @@
 "use client";
 
 import { Liquid } from "liquid-gooey";
-import { useState, type MouseEventHandler, type ReactNode } from "react";
+import { useEffect, useRef, useState, type MouseEventHandler, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { usePrefersReducedMotion } from "./use-reduced-motion";
 
@@ -52,9 +52,22 @@ function PrimaryButton({ action, className, children }: { action: Action; classN
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const open = !reduce && (hovered || focused);
+  const group = useRef<HTMLDivElement>(null);
+
+  // Liquid renders its shapes through React portals into <g> elements of its
+  // aria-hidden svg layers. React listens for focus events on every portal
+  // container, and Chromium makes an SVG element with focus listeners a Tab
+  // stop: an invisible stop inside aria-hidden content, just before the
+  // button. tabindex="-1" takes those layers out of the Tab order.
+  useEffect(() => {
+    group.current
+      ?.querySelectorAll("svg[data-gooey-svg] g, svg[data-gooey-overlay] g")
+      .forEach((layer) => layer.setAttribute("tabindex", "-1"));
+  }, []);
 
   return (
     <Liquid
+      ref={group}
       fill="var(--forest)"
       data-gooey-button="primary"
       className={cn("inline-flex align-middle", className)}

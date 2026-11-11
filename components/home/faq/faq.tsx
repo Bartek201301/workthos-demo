@@ -11,6 +11,13 @@ export const faqItems = [
   { question: "Where do the numbers on this site come from?", answer: "From the real data of two builds, HackWin and workthos. Nothing is invented." },
 ] as const;
 
+// The shadcn trigger hides the outline and draws a faint 50% ring on focus.
+// Put back the global forest outline of app/globals.css (2 px, offset 2 px)
+// and drop the ring. Better fixed in components/ui/accordion.tsx, which is
+// outside this task's paths.
+const triggerClass =
+  "py-4 text-base font-semibold sm:text-lg focus-visible:border-transparent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-solid focus-visible:outline-ring focus-visible:ring-0";
+
 /** Home section 8 (docs/prd.md): five or six short questions. */
 export function Faq() {
   return (
@@ -21,7 +28,7 @@ export function Faq() {
           <Accordion className="mt-8 max-w-3xl">
             {faqItems.map((item) => (
               <AccordionItem key={item.question} value={item.question} className="border-sand-200">
-                <AccordionTrigger className="py-4 text-base font-semibold sm:text-lg">{item.question}</AccordionTrigger>
+                <AccordionTrigger className={triggerClass}>{item.question}</AccordionTrigger>
                 <AccordionContent keepMounted className="text-base text-ink-soft">{item.answer}</AccordionContent>
               </AccordionItem>
             ))}

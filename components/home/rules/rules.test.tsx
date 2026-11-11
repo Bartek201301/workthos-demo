@@ -20,4 +20,13 @@ describe("Rules", () => {
       expect(within(card).getByRole("heading", { level: 3 }).textContent).toBe(titles[i]);
     });
   });
+
+  it("says what a worktree is: a separate working folder of the same repository, not a copy", () => {
+    render(<Rules />);
+    const first = screen.getAllByRole("article")[0];
+    expect(first).toHaveTextContent(
+      "Each builder gets one job and its own worktree: a separate working folder of the same repository.",
+    );
+    expect(first.textContent).not.toMatch(/copy/i);
+  });
 });

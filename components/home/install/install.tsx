@@ -17,7 +17,12 @@ export function Install() {
               </a>
             </p>
           </div>
-          <div className="self-center">
+          {/*
+            BotAvatar draws a quarter of its size past each side of its box
+            (room for a hop or a flip). px-10 is that quarter of 160 px, so the
+            drawing stays inside the column and never widens the page.
+          */}
+          <div className="self-center px-10">
             <Robot role="builder" state="sleeping" size={160} />
           </div>
         </div>

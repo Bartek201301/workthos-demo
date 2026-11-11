@@ -55,6 +55,21 @@ describe("Robot", () => {
     expect(props.className).toBeUndefined();
   });
 
+  it("passes a CSS length to BotAvatar's size prop as it is, never to CSS", () => {
+    for (const size of ["6rem", "clamp(4.5rem, 2.25rem + 6vw, 8rem)", "var(--hero-robot-size)"]) {
+      BotAvatar.mockClear();
+      const { unmount } = render(<Robot role="builder" state="working" size={size} />);
+      const props = lastProps();
+      expect(props.size).toBe(size);
+      expect(props.style).toBeUndefined();
+      expect(props.width).toBeUndefined();
+      expect(props.height).toBeUndefined();
+      expect(props.className).toBeUndefined();
+      expect(screen.getByRole("img", { name: "builder robot, working" })).toBeInTheDocument();
+      unmount();
+    }
+  });
+
   it("never asks for the plastic look or a paused avatar", () => {
     render(<Robot role="builder" state="sleeping" />);
     expect(lastProps().shading).not.toBe("plastic");

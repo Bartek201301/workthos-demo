@@ -31,7 +31,7 @@ export function DashboardView() {
           <ToggleGroupItem
             key={o.value}
             value={o.value}
-            className="h-9 rounded-pill px-4 text-xs font-semibold tracking-wide text-ink uppercase hover:bg-sand-200 hover:text-ink aria-pressed:bg-forest! aria-pressed:text-sand-50!"
+            className="h-9 rounded-pill px-4 text-xs font-semibold tracking-wide text-ink uppercase hover:bg-sand-200 hover:text-ink"
           >
             {o.label}
           </ToggleGroupItem>

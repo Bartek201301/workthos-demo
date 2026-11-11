@@ -45,7 +45,7 @@ export function InstallBox() {
           <button
             type="button"
             onClick={copy}
-            className="inline-flex items-center gap-2 rounded-pill bg-forest px-5 py-2 font-semibold text-sand-50 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+            className="inline-flex items-center gap-2 rounded-pill bg-forest px-5 py-2 font-semibold text-sand-50"
           >
             {message === "Copied" ? <CheckIcon className="size-4" aria-hidden /> : <CopyIcon className="size-4" aria-hidden />}
             Copy command

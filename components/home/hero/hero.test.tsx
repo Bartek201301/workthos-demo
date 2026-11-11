@@ -25,4 +25,18 @@ describe("Hero", () => {
     expect(screen.getByRole("img", { name: "builder robot, working" })).toBeInTheDocument();
     expect(screen.getByRole("img", { name: "machine robot, idle" })).toBeInTheDocument();
   });
+
+  it("sizes the robots with a CSS length that grows with the screen", () => {
+    render(<Hero />);
+    const cast = screen.getByRole("list", { name: "The cast" });
+    const size = cast.style.getPropertyValue("--hero-robot-size");
+    // A clamp from a phone size up to a larger desktop size, through a vw term.
+    const match = /^clamp\(([\d.]+)rem, .*vw.*, ([\d.]+)rem\)$/.exec(size);
+    expect(match).not.toBeNull();
+    expect(Number(match![2])).toBeGreaterThan(Number(match![1]));
+    for (const robot of screen.getAllByRole("img", { name: /robot/ })) {
+      // BotAvatar turns the length into its overscanned canvas size.
+      expect(robot.style.width).toContain("var(--hero-robot-size)");
+    }
+  });
 });

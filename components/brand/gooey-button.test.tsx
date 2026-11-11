@@ -55,6 +55,17 @@ describe("GooeyButton", () => {
     expect(liquid).toHaveAttribute("focusable", "false");
   });
 
+  it("keeps the liquid layers out of the Tab order: the link is the only stop", () => {
+    const { container } = render(
+      <GooeyButton variant="primary" href="#install">
+        Get started
+      </GooeyButton>,
+    );
+    const layers = container.querySelectorAll("svg[data-gooey-svg] g, svg[data-gooey-overlay] g");
+    expect(layers.length).toBeGreaterThan(0);
+    for (const layer of layers) expect(layer).toHaveAttribute("tabindex", "-1");
+  });
+
   it("draws the secondary variant as an ink outline without goo", () => {
     const { container } = render(
       <GooeyButton variant="secondary" href="#how-it-works" className="mt-4">

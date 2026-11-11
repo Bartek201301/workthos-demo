@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   },
   description:
     "workthos is an open source workflow to run many Claude Code sessions in parallel on one GitHub repository: a lead plans and reviews, builders work in their own worktrees, and a merge machine with no model merges only what was reviewed.",
+  // public/favicon.svg, in the palette. With a declared icon the browser no
+  // longer asks for /favicon.ico, which the static site does not have.
+  icons: { icon: { url: "/favicon.svg", type: "image/svg+xml" } },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

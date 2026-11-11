@@ -16,6 +16,13 @@ describe("Install", () => {
     expect(screen.getByText("Copied").closest("[aria-live]")).not.toBeNull();
   });
 
+  it("leaves the copy button's focus to the global forest outline", () => {
+    render(<Install />);
+    const button = screen.getByRole("button", { name: /copy command/i });
+    expect(button).not.toHaveClass("outline-none");
+    expect(button.className).not.toMatch(/(^|\s)focus-visible:(outline-none|ring)/);
+  });
+
   it("links to the repository", () => {
     render(<Install />);
     expect(screen.getByRole("link", { name: /github/i })).toHaveAttribute("href", site.repositoryUrl);
